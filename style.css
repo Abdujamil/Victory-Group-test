@@ -7,10 +7,6 @@
 }
 
 /* Header */
-
-header {
-}
-
 .header_head {
   background-color: #f0f1f5;
 }
@@ -29,7 +25,7 @@ header ul {
 
 .header_head ul {
   padding: 20px;
-  max-width: 1320px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -53,8 +49,9 @@ header ul li a {
 }
 
 .header_header .header_header_body {
-  max-width: 1320px;
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,6 +81,23 @@ header ul li a {
 .header_header .header_header_body ul li a {
   padding: 20px;
 }
+.burger_menu {
+  display: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.menu_close_btn {
+  display: none;
+  cursor: pointer;
+}
+
+.burger_menu img {
+  width: 100%;
+  height: 100%;
+}
+
 /* END Header */
 
 /* Body */
@@ -115,8 +129,9 @@ header ul li a {
   justify-content: center;
   margin: 0 auto;
   width: 100%;
-  max-width: 1320px;
+  max-width: 1280px;
   height: 100%;
+  padding: 0 20px;
 }
 
 .intro_body_texts {
@@ -207,8 +222,9 @@ header ul li a {
 }
 
 .form_container {
-  max-width: 1320px;
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 0 20px;
   margin: 20px auto 80px auto;
 }
 
@@ -778,8 +794,20 @@ input[type="range"]:focus::-moz-range-thumb {
   max-height: 524px;
 }
 
+.car_cards_card_img {
+  width: 100%;
+  height: 100%;
+  max-height: 229px;
+}
+
+.car_cards_card_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .car_cards_card_body {
-  padding: 20px;
+  padding: 18px;
 }
 
 .card_body_head {
@@ -1080,3 +1108,223 @@ input[type="checkbox"] {
 }
 
 /* END Body */
+
+/* Adaptive */
+
+@media screen and (max-width: 1200px) {
+  .header_head ul {
+    padding: 20px 0;
+    max-width: 98%;
+  }
+
+  .header_header .header_header_body {
+    padding: 0 0;
+    max-width: 98%;
+  }
+
+  .header_header .header_header_body ul li a {
+    padding: 20px 10px;
+  }
+
+  .header_header_logo {
+    max-width: 200px;
+  }
+
+  .intro_body {
+    max-width: 98%;
+    padding: 0;
+  }
+
+  .body_texts_title h2,
+  .form_container_img_foot h3 {
+    font-size: 56px;
+  }
+
+  .body_texts_title p {
+    font-size: 24px;
+  }
+
+  .form_container_img_foot p {
+    font-size: 30px;
+  }
+
+  .cars_modal_block_container {
+    width: 98%;
+  }
+
+  .car_cards_card {
+    width: 250px;
+  }
+
+  .car_cards_card_body {
+    padding: 10px;
+  }
+
+  .car_cards_card_img {
+    width: 100%;
+    height: 150px;
+  }
+
+  .card_body_price h5,
+  .card_body_head h5 {
+    font-size: 16px;
+  }
+
+  .card_body_btn button {
+    font-size: 16px;
+  }
+  .car_cards_card .info_text,
+  .card_body_price p,
+  .card_body_about p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 912px) {
+  .header_head ul li a {
+    font-size: 13px;
+  }
+
+  .header_head ul li a svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+
+  .header_header .header_header_body {
+    margin: 0;
+  }
+
+  .header_header_body ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    height: 700px;
+    justify-content: center;
+    z-index: 99;
+  }
+
+  .menu_close_btn,
+  .burger_menu {
+    display: block;
+  }
+  .menu_close_btn {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+  }
+
+  .form_container form {
+    flex-direction: column;
+  }
+
+  .form_block1,
+  .form_block2 {
+    width: 100%;
+  }
+
+  #brand,
+  #model,
+  #generation {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #car .car_cards {
+    grid-template-columns: repeat(2, 0fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header_head {
+    display: none;
+  }
+
+  .body_texts_title h2,
+  .form_container_img_foot h3 {
+    font-size: 50px;
+  }
+
+  .form_container form {
+    padding: 20px 10px;
+  }
+
+  .form_block1_car label,
+  .loan-duration label,
+  .loan-duration label span,
+  .form_total span {
+    font-size: 18px;
+  }
+
+  .body_texts_title p {
+    font-size: 20px;
+  }
+
+  .cars_modal_block_head {
+    padding: 20px;
+  }
+
+  .cars_modal_block_head_btns {
+    max-width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cars_modal_block_head_btns button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .burger_menu {
+    width: 40px;
+  }
+
+  .intro_body_btn {
+    width: 100%;
+  }
+
+  .body_texts_title h2,
+  .form_container_img_foot h3 {
+    font-size: 30px;
+  }
+  .body_texts_title p,
+  .form_container_img_foot p {
+    font-size: 18px;
+  }
+
+  .form_container_img_foot_text {
+    margin-left: 25px;
+  }
+  .form_block1_car label,
+  .loan-duration label,
+  .loan-duration label span,
+  .form_total span {
+    font-size: 16px;
+  }
+
+  .loan-numbers ul li {
+    font-size: 12px;
+  }
+
+  #brand,
+  #model,
+  #generation {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #car .car_cards {
+    grid-template-columns: repeat(1, 0fr);
+  }
+
+  .cars_modal_block_container {
+    width: 96%;
+  }
+
+  .cars_modal_block_body {
+    max-height: 260px;
+  }
+}
+/* END */

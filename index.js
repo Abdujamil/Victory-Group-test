@@ -44,12 +44,27 @@ function updateCountdown() {
 }
 
 // Обновляем таймер каждую секунду
-setInterval(updateCountdown, 1000);
+// setInterval(updateCountdown, 1000);
 
 // Запускаем функцию обновления таймера для первоначальной установки значений
 updateCountdown();
 
 document.addEventListener("DOMContentLoaded", function () {
+  const burgerMenu = document.querySelector(".burger_menu");
+  const menu = document.querySelector(".menu");
+  const menuCloseBtn = document.querySelector(".menu_close_btn");
+
+  // Обработчик события для кнопки бургера
+  burgerMenu.addEventListener("click", function () {
+    menu.style.display = "flex";
+  });
+
+  // Обработчик события для кнопки закрытия меню
+  menuCloseBtn.addEventListener("click", function () {
+    menu.style.display = "none";
+  });
+
+
   // Modal block open/close script
 
   const openModalBtn = document.querySelector(".form_block1_car_inpt");
@@ -102,19 +117,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Input type range
 
-  const loanDurationInput = document.getElementById('range1');
+  const loanDurationInput = document.getElementById("range1");
   const loanDurationValue = document.getElementById("loan-duration-value1");
-  
+
   loanDurationInput.addEventListener("input", function () {
     const currentValue = parseFloat(this.value);
     const maxValue = 80;
     const maxValuePercent = 10;
     const rublesValue = (currentValue / maxValue) * maxValuePercent * 50000;
-  
+
     loanDurationValue.textContent = rublesValue.toLocaleString() + " ₽";
   });
-  
-  
 
   const sliders = document.querySelectorAll("input[type='range']");
   const sliderValues = document.querySelectorAll(".value");

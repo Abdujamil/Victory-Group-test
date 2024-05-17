@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
     menu.style.display = "none";
   });
 
-
   // Modal block open/close script
 
   const openModalBtn = document.querySelector(".form_block1_car_inpt");
@@ -147,4 +146,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
     slider.style.background = `linear-gradient(to right, #D40200 ${progress}%, #ccc ${progress}%)`;
   }
+});
+
+$(document).ready(function () {
+  // Инициализация Ion.RangeSlider для срока кредита
+  $("#loanTerms").ionRangeSlider({
+    grid: true,
+    values: ["2", "6", "12", "24", "36", "48", "60", "72", "84", "96"],
+    onStart: function (data) {
+      $("#loan-duration-value").text(data.from_value + " месяца");
+      updateMonthlyPayment();
+    },
+    onChange: function (data) {
+      $("#loan-duration-value").text(data.from_value + " месяца");
+      updateMonthlyPayment();
+    },
+  });
+
+  // Инициализация Ion.RangeSlider для первоначального взноса
+  $("#initialFee").ionRangeSlider({
+    grid: true,
+    values: ["0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%"],
+    onStart: function (data) {
+      $("#initial-fee-value").text(data.from_value);
+      updateMonthlyPayment();
+    },
+    onChange: function (data) {
+      $("#initial-fee-value").text(data.from_value);
+      updateMonthlyPayment();
+    },
+  });
+
+  // Функция для обновления ежемесячного платежа
+  function updateMonthlyPayment() {
+    var loanTermSlider = $("#loanTerms").data("ionRangeSlider");
+    var initialFeeSlider = $("#initialFee").data("ionRangeSlider");
+
+    if (!loanTermSlider || !initialFeeSlider) {
+      return;
+    }
+
+    var loanTerm = parseInt(loanTermSlider.result.from_value);
+    var initialFee = parseInt(initialFeeSlider.result.from_value);
+
+    var loanAmount = 1000000; // Предположим, что сумма кредита 1 000 000 ₽
+    var annualInterestRate = 0.1; // Предположим, что годовая процентная ставка 10%
+    var monthlyInterestRate = annualInterestRate / 12;
+
+    var initialFeeAmount = (initialFee / 100) * loanAmount;
+    var principal = loanAmount - initialFeeAmount;
+
+    var monthlyPayment =
+      (principal * monthlyInterestRate) /
+      (1 - Math.pow(1 + monthlyInterestRate, -loanTerm));
+
+    $("#monthly-payment").text(monthlyPayment.toFixed(2) + " ₽");
+  }
+
+  // Начальная инициализация значений
+  updateMonthlyPayment();
 });

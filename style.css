@@ -80,7 +80,15 @@ header ul li a {
 
 .header_header .header_header_body ul li a {
   padding: 20px;
+  transition: all 0.3s ease-in-out;
 }
+
+.header_header .header_header_body ul li a:hover {
+  background-color: #0000008f;
+  color: #fff;
+  border-radius: 4px;
+}
+
 .burger_menu {
   display: none;
   width: 50px;
@@ -219,6 +227,11 @@ header ul li a {
   color: #fff;
   border: none;
   cursor: pointer;
+  transition: background .3s ease-in-out;
+}
+
+.intro_body_btn button:hover{
+  background-color: #af0502;
 }
 
 .form_container {
@@ -278,22 +291,6 @@ header ul li a {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.loan-numbers ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.loan-numbers ul li {
-  list-style: none;
 }
 
 input[type="range"] {
@@ -482,10 +479,18 @@ input[type="range"]:focus::-moz-range-thumb {
   background-color: transparent;
   border: 1px solid #bfbfbf;
   font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.cars_modal_block_head_btns button:hover {
+  background-color: #f0f1f5;
+  color: #2a2a2a;
 }
 
 .cars_modal_block_head_btns button.active {
-  background-color: #f0f1f5;
+  background-color: #000;
+  color: #fff;
 }
 
 .cars_modal_block_body {
@@ -918,6 +923,38 @@ input[type="range"]:focus::-moz-range-thumb {
 
 /* END Modal style */
 
+.irs-grid-text {
+  font-size: 16px;
+  padding: 0 0;
+  color: #2a2a2a !important;
+}
+
+.irs--flat .irs-bar {
+  height: 2px;
+}
+
+.irs--flat .irs-line {
+  height: 2px;
+}
+
+.irs-single,
+.irs-min,
+.irs-max {
+  display: none;
+}
+
+.irs-grid-pol {
+  display: none;
+}
+
+.irs--flat .irs-handle > i:first-child {
+  top: -3px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  margin-left: -2px;
+}
+
 input:focus {
   outline: none;
 }
@@ -1213,8 +1250,8 @@ input[type="checkbox"] {
   }
   .menu_close_btn {
     position: absolute;
-    top: 40px;
-    right: 20px;
+    top: 25px;
+    right: 0px;
   }
 
   .form_container form {
@@ -1305,7 +1342,7 @@ input[type="checkbox"] {
     font-size: 16px;
   }
 
-  .loan-numbers ul li {
+  .irs-grid-text {
     font-size: 12px;
   }
 
@@ -1316,7 +1353,9 @@ input[type="checkbox"] {
   }
 
   #car .car_cards {
-    grid-template-columns: repeat(1, 0fr);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .cars_modal_block_container {

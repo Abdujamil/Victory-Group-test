@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcut icon" href="images/victory-logo.ico">
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
     <link rel="stylesheet" href="/style.css" />
     <title>Victory Group Test</title>
   </head>
@@ -196,62 +198,24 @@
             </div>
 
             <div class="loan-duration">
-              <label for="loan-duration"
-                >Срок кредитования
-                <span id="loan-duration-value" class="value">24</span></label
-              >
+              <label for="loan-duration">Срок кредитования:
+                <span id="loan-duration-value" class="value">24 месяца</span>
+              </label>
               <div class="range">
-                <input type="range" min="2" max="96" value="2" id="range" />
-              </div>
-              <div class="loan-numbers">
-                <ul>
-                  <li>2</li>
-                  <li>6</li>
-                  <li>12</li>
-                  <li>24</li>
-                  <li>36</li>
-                  <li>48</li>
-                  <li>60</li>
-                  <li>72</li>
-                  <li>84</li>
-                  <li>96</li>
-                </ul>
+                <input  id="loanTerms" type="range" min="2" max="96" value="24" id="range" />
               </div>
             </div>
             <div class="loan-duration">
-              <label for="loan-duration"
-                >Первоначальный взнос:
-                <span id="loan-duration-value1" class="value">0 ₽</span></label
-              >
-
-              <div class="range">
-                <input
-                  class="loan-duration"
-                  type="range"
-                  min="0"
-                  max="80"
-                  value="0"
-                  id="range1"
-                />
-              </div>
-              <div class="loan-numbers">
-                <ul>
-                  <li>0%</li>
-                  <li>10%</li>
-                  <li>20%</li>
-                  <li>30%</li>
-                  <li>40%</li>
-                  <li>50%</li>
-                  <li>60%</li>
-                  <li>70%</li>
-                  <li>80%</li>
-                </ul>
+              <label for="loan-duration">Первоначальный взнос:
+                <span id="initial-fee-value" class="value">0%</span>
+              </label>
+              <div  class="range">
+                <input  id="initialFee"class="loan-duration" type="range" min="0" max="80" value="0" id="range1" />
               </div>
             </div>
-
             <div class="form_total">
               <p>Ваш платеж:</p>
-              <span>0 ₽</span>
+              <span id="monthly-payment">0 ₽</span>
             </div>
           </div>
 
@@ -1339,7 +1303,8 @@
     </main>
 
     <footer></footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
     <script src="/index.js"></script>
   </body>
 </html>
